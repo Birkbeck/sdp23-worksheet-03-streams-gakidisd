@@ -17,6 +17,10 @@ public class Outline {
     List<String> words = getList();
     System.out.println("1: ");
     // YOUR CODE
+
+    for (String word: words){
+      System.out.println("  " + word);
+    }
   }
 
   // Repeat this problem but without two spaces in front of each word.
@@ -26,6 +30,8 @@ public class Outline {
     List<String> words = getList();
     System.out.println("2: ");
     // YOUR CODE
+
+    words.stream().forEach(word -> System.out.println(word));
   }
 
   // For each of the following lambda expressions (see Question 5 in Worksheet 2),
@@ -120,6 +126,8 @@ public class Outline {
 
   public static void main(String... args) { // varargs alternative to String[]
     question1();
+    System.out.println();
+    question2();
 
   }
 }
