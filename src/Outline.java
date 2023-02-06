@@ -46,6 +46,17 @@ public class Outline {
     List<String> words = getList();
     System.out.println("3:");
     // YOUR CODE
+    List<String> newList = words.stream()
+            .filter(s -> s.length() < 4)
+            .toList();
+
+    List<String> newList1 = words.stream()
+            .filter(s -> s.contains("b"))
+            .collect(Collectors.toList());
+
+    List<String> newList2 = words.stream()
+            .filter(s -> s.length() % 2 ==0)
+            .toList();
   }
 
 
