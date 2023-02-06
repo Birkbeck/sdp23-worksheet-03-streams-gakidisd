@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -72,6 +73,17 @@ public class Outline {
     List<String> words = getList();
     System.out.println("4:");
     // YOUR CODE
+    List<String> newList = words.stream()
+            .map(s -> s + "!")
+            .toList();
+
+    List<String> newList1 = words.stream()
+            .map(s -> s.replace("i","eye"))
+            .toList();
+
+    List<String> newList2 = words.stream()
+            .map(s -> s.toUpperCase(Locale.ROOT))
+            .toList();
   }
 
 
