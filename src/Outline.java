@@ -252,6 +252,9 @@ public class Outline {
             .forEach(dish -> System.out.println(dish));
   }
 
+  /**
+   * Count the number of dishes in a stream using the map and reduce methods
+   */
   public static void question11(){
     List<Dish> menu = Dish.getMenu();
 
@@ -263,6 +266,11 @@ public class Outline {
     System.out.println(sum);
   }
 
+  /**
+   * Given a list of numbers, print out the list of the squares of each number.
+   * For example, given [1, 2, 3, 4, 5] you should print [1, 4, 9, 16, 25].
+   * @param lst
+   */
   public static void question12(List<Integer> lst){
 
     List <Integer> powerOfTwo = lst.stream()
@@ -273,7 +281,14 @@ public class Outline {
 
   }
 
-
+  /**
+   * Given two lists of numbers, print out all pairs of numbers.
+   * For example, given a list [1, 2, 3] and a list [3, 4]
+   * you should print: [[1, 3], [1, 4], [2, 3], [2, 4], [3, 3], [3, 4]].
+   * For simplicity, you can represent each pair as a list with two elements.
+   * @param one
+   * @param two
+   */
   public static void question13(List<Integer> one, List<Integer> two){
 
 
@@ -286,6 +301,12 @@ public class Outline {
 
   }
 
+  /**
+   * Extend the previous example to return only pairs whose sum is divisible by 3.
+   * For example, [2, 4] and [3, 3] are valid.
+   * @param one
+   * @param two
+   */
   public static void question14(List<Integer> one, List<Integer> two){
 
            List<String> pairs = one.stream()
