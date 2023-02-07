@@ -221,6 +221,11 @@ public class Outline {
     List<String> words = getList();
     System.out.println("8:");
     // YOUR CODE
+
+              words.stream()
+            .reduce( (word1,word2) -> word1 + word2)
+            .stream()
+            .forEach(word -> System.out.println(word.toUpperCase(Locale.ROOT)));
   }
 
   // (*) Produce a String that is all the words concatenated together, but
@@ -237,7 +242,7 @@ public class Outline {
   // CONTINUE WITH THE REST OF THE QUESTIONS
 
   public static void main(String... args) { // varargs alternative to String[]
-    question7();
+    question8();
 
   }
 }
