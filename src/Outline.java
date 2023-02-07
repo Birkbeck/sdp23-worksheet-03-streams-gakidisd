@@ -47,17 +47,32 @@ public class Outline {
     List<String> words = getList();
     System.out.println("3:");
     // YOUR CODE
-    List<String> newList = words.stream()
+    List<String> lessThanFour = words.stream()
             .filter(s -> s.length() < 4)
             .toList();
 
-    List<String> newList1 = words.stream()
+    List<String> containingB = words.stream()
             .filter(s -> s.contains("b"))
             .collect(Collectors.toList());
 
-    List<String> newList2 = words.stream()
+    List<String> evenLength = words.stream()
             .filter(s -> s.length() % 2 ==0)
             .toList();
+
+    System.out.println("List with strings with no more than e characters");
+    System.out.println(lessThanFour);
+
+    System.out.println();
+
+    System.out.println("List containing 'D'");
+    System.out.println(containingB);
+
+    System.out.println();
+
+    System.out.println("List with strings of even length");
+    System.out.println(evenLength);
+
+
   }
 
 
