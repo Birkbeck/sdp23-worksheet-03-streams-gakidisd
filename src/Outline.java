@@ -99,6 +99,17 @@ public class Outline {
     List<String> newList2 = words.stream()
             .map(s -> s.toUpperCase(Locale.ROOT))
             .toList();
+
+    System.out.println("First List");
+    System.out.println(newList);
+
+    System.out.println();
+    System.out.println("Second List");
+    System.out.println(newList1);
+
+    System.out.println();
+    System.out.println("Third List");
+    System.out.println(newList2);
   }
 
 
@@ -111,6 +122,13 @@ public class Outline {
     List<String> words = getList();
     System.out.println("5a:");
     // YOUR CODE
+    List<String> newList = words.stream()
+            .map(word -> word.toUpperCase(Locale.ROOT)) // all the words to uppercase
+            .filter(word -> word.length() < 4) // filtering the words being less than 4 characters
+            .filter(word -> word.contains("e")) // keeping only the words containing e
+            .toList(); //saving the results to a new list
+
+    System.out.println(newList);
   }
 
 
