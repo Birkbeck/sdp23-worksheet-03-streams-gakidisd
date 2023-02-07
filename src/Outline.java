@@ -264,8 +264,20 @@ public class Outline {
     System.out.println(sum);
   }
 
+  public static void question12(List<Integer> lst){
+
+    List <Integer> powerOfTwo = lst.stream()
+            .map(item -> item * item)
+            .collect(Collectors.toList());
+
+    System.out.println(powerOfTwo);
+
+  }
+
+
+
   public static void main(String... args) { // varargs alternative to String[]
-    question11();
+    question12(List.of(1,2,3,4,5));
 
   }
 }
