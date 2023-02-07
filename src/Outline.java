@@ -241,6 +241,9 @@ public class Outline {
 
   // CONTINUE WITH THE REST OF THE QUESTIONS
 
+  /**
+   * Using streams to find the first two dishes of type MEAT
+   */
   public static void question10(){
     List<Dish> menu = Dish.getMenu();
 
@@ -250,8 +253,19 @@ public class Outline {
             .forEach(dish -> System.out.println(dish));
   }
 
+  public static void question11(){
+    List<Dish> menu = Dish.getMenu();
+
+    int sum = menu.stream()
+            .map(dish -> dish.name())
+            .reduce (0, (i, l) -> i + 1, (i, j) -> i + 1);
+
+
+    System.out.println(sum);
+  }
+
   public static void main(String... args) { // varargs alternative to String[]
-    question10();
+    question11();
 
   }
 }
