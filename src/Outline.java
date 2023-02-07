@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
@@ -129,6 +130,14 @@ public class Outline {
             .toList(); //saving the results to a new list
 
     System.out.println(newList);
+
+    List<String> newList1 = words.stream()
+            .map(word -> word.toUpperCase(Locale.ROOT)) // all the words to uppercase
+            .filter(word -> word.length() < 4) // filtering the words being less than 4 characters
+            .filter(word -> word.contains("q")) // keeping only the words containing e
+            .toList(); //saving the results to a new list
+
+    System.out.println("\n" + newList1);
   }
 
 
@@ -141,6 +150,45 @@ public class Outline {
     List<String> words = getList();
     System.out.println("6:");
     // YOUR CODE
+
+
+    List<String> newList = new ArrayList<>();
+    // we apply the mapping first
+    for (String word : words){
+      newList.add(word.toUpperCase(Locale.ROOT));
+    }
+    System.out.println("List of words before any conversion");
+    System.out.println(words);
+    System.out.println();
+    System.out.println("List of words after converting them to uppercase.");
+    System.out.println(newList);
+
+    List<String> words1 = newList;
+    //we apply the filtering and keeping only the words with less than 4 chars
+    for (int i = 0; i < newList.size(); i++) {
+      if (newList.get(i).length() > 4){
+        words1.remove(i);
+      }
+    }
+
+    System.out.println("\nList of words with less than 4 chars");
+    System.out.println(words1);
+
+    List<String> words2 = words1;
+    // keeping only the strings containg "e" from the last list
+    for (int i = 0; i < words1.size(); i++) {
+      if (!words1.get(i).contains("e")){
+        words2.remove(i);
+      }
+    }
+
+    System.out.println("\nList of words with less than 4 chars");
+    System.out.println(words2);
+
+
+
+
+
   }
 
   // (*) Produce a single String that is the result of concatenating the
@@ -181,9 +229,7 @@ public class Outline {
   // CONTINUE WITH THE REST OF THE QUESTIONS
 
   public static void main(String... args) { // varargs alternative to String[]
-    question1();
-    System.out.println();
-    question2();
+
 
   }
 }
