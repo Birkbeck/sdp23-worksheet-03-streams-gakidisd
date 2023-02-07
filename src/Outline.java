@@ -1,6 +1,5 @@
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class Outline {
@@ -275,9 +274,21 @@ public class Outline {
   }
 
 
+  public static void question13(List<Integer> one, List<Integer> two){
+
+
+   List<String> pairs = one.stream()
+            .flatMap(i -> two.stream().map(j -> "[" + i+ "," + j + "]"))
+            .collect(Collectors.toList());
+
+    System.out.println(pairs);
+
+
+  }
+
 
   public static void main(String... args) { // varargs alternative to String[]
-    question12(List.of(1,2,3,4,5));
+    question13(List.of(1,2,3,4,5), List.of(11,12,13,14,15));
 
   }
 }
