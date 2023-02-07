@@ -241,8 +241,17 @@ public class Outline {
 
   // CONTINUE WITH THE REST OF THE QUESTIONS
 
+  public static void question10(){
+    List<Dish> menu = Dish.getMenu();
+
+    menu.stream()
+            .limit(2)
+            .filter(dish -> dish.type() == Dish.Type.MEAT)
+            .forEach(dish -> System.out.println(dish));
+  }
+
   public static void main(String... args) { // varargs alternative to String[]
-    question9();
+    question10();
 
   }
 }
