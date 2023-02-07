@@ -201,6 +201,14 @@ public class Outline {
     List<String> words = getList();
     System.out.println("7:");
     // YOUR CODE
+
+
+    String concatenatedString = words.stream()
+            .map(word -> word.toUpperCase(Locale.ROOT))
+            .reduce( (word1,word2) -> word1+word2)
+            .stream().collect(Collectors.joining());
+
+    System.out.println("Concatenated Words: " + concatenatedString);
   }
 
 
@@ -229,7 +237,7 @@ public class Outline {
   // CONTINUE WITH THE REST OF THE QUESTIONS
 
   public static void main(String... args) { // varargs alternative to String[]
-
+    question7();
 
   }
 }
