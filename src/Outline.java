@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class Outline {
@@ -338,19 +339,21 @@ public class Outline {
   }
 
   public static List<Double> question16(int sizeOfList){
-    Random random = new Random();
-
     List<Double> list = new Random().doubles().limit(sizeOfList).boxed().toList();
-
-
     return list;
+  }
 
+  public static List<Integer> question17(int initialValue, int step, int sizeOfList){
+    List<Integer> list = IntStream.iterate(initialValue, d -> d <= (50 + step * sizeOfList), d -> d + step).boxed().toList();
+    return list;
   }
 
 
   public static void main(String... args) { // varargs alternative to String[]
-    List<Double> nums = question16(8);
-    System.out.println(nums);
+    List<Integer> list = question17(50,5,10);
+    System.out.println(list);
 
   }
+
+
 }
