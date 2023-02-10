@@ -217,11 +217,12 @@ public class Outline {
     List<String> words = getList();
     System.out.println("8:");
     // YOUR CODE
+    Locale.setDefault(Locale.ROOT);
 
               words.stream()
             .reduce( (word1,word2) -> word1 + word2)
             .stream()
-            .forEach(word -> System.out.println(word.toUpperCase(Locale.ROOT)));
+            .forEach(word -> System.out.println(word.toUpperCase()));
   }
 
   // (*) Produce a String that is all the words concatenated together, but
@@ -318,9 +319,38 @@ public class Outline {
     System.out.println(pairs);
   }
 
+  public static void question15(List<Integer> nums){
+
+    int sum1 = nums.stream()
+            .mapToInt(i -> i.intValue()).sum();
+
+    int sum2 = nums.stream()
+            .reduce(0,(num1,num2) -> num1 + num2)
+            .intValue();
+
+    int sum3 = nums.stream()
+            .collect(Collectors.summingInt(Integer::intValue));
+
+
+    System.out.println(sum1);
+    System.out.println(sum2);
+    System.out.println(sum3);
+  }
+
+  public static List<Double> question16(int sizeOfList){
+    Random random = new Random();
+
+    List<Double> list = new Random().doubles().limit(sizeOfList).boxed().toList();
+
+
+    return list;
+
+  }
+
 
   public static void main(String... args) { // varargs alternative to String[]
-    question14(List.of(1,2,3,4,5), List.of(1,2,3));
+    List<Double> nums = question16(8);
+    System.out.println(nums);
 
   }
 }
